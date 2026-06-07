@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daichi Toshino – Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+JP:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Nav ── -->
+  <nav>
+    <span class="nav-logo">toshi0515.github.io</span>
+    <ul class="nav-links">
+      <li><a href="#works">Works</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <div class="hero">
+    <p class="hero-label">Portfolio</p>
+    <h1>
+      <span class="name-jp">歳納 大地</span>
+      Daichi Toshino
+    </h1>
+    <p class="hero-desc">
+      XR・IoT・デジタルツインの研究、趣味でゲーム開発に取り組み中です。
+    </p>
+    <div class="hero-tags">
+      <span class="tag">XR</span>
+      <span class="tag">Unity</span>
+      <span class="tag">C#</span>
+      <span class="tag">IoT</span>
+      <span class="tag">OSS</span>
+    </div>
+    <div class="hero-links">
+      <a href="#works" class="btn">Works ↓</a>
+      <a href="https://github.com/toshi0515" class="btn" target="_blank">GitHub ↗</a>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- ── Works ── -->
+  <section id="works">
+    <p class="section-label">01 — Works</p>
+    <h2>制作物</h2>
+
+    <div class="works-list">
+
+      <!-- Work 1: 卒業研究 AR アプリ -->
+      <div class="work-item">
+        <div class="work-media work-media--video">
+          <!--
+            Google Drive 動画の埋め込み:
+            1. Drive にアップロード → 右クリック → 共有 → 「リンクを知っている全員」に変更
+            2. 右クリック → 「共有」→「埋め込む」→ iframe の src の URL をコピー
+            3. YOUR_DRIVE_FILE_ID_1 を書き換え
+          --> 
+          <iframe
+            src="https://drive.google.com/file/d/18pGdacv4biiY7kRCzOCZ6bBhzWGKaUXI/preview"
+            allow="autoplay"
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div>
+          <p class="work-meta">Graduation Research · 2025</p>
+          <h3>産業機械 AR 可視化制御システム</h3>
+          <p class="work-desc">
+            Meta Quest 3 を用いた AR アプリケーション。
+            産業機械(モータ)の稼働状態をリアルタイムで 3D 空間に可視化し、遠隔制御できます。
+            MQTT プロトコルで実機と通信し、疎結合・低レイテンシ設計を追求しました。
+          </p>
+          <div class="work-tech">
+            <span class="tech-badge">Unity</span>
+            <span class="tech-badge">C#</span>
+            <span class="tech-badge">Meta XR SDK</span>
+            <span class="tech-badge">MQTT</span>
+            <span class="tech-badge">UniTask</span>
+            <span class="tech-badge">PullSub (自作ライブラリ)</span>            
+          </div>
+          <div class="work-links">
+            <a href="https://github.com/toshi0515/ARMotorSystem-portfolio" class="work-link" target="_blank">↗ GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work 2: 卒業研究 PLC ゲートウェイアプリ -->
+      <div class="work-item">
+        <div class="work-media work-media--image">
+          <img class="work-image" src="images/Architecture.png" alt="システム構成図" />
+        </div>
+        <div>
+          <p class="work-meta">Graduation Research · 2025</p>
+          <h3>PLC 通信ゲートウェイアプリ</h3>
+          <p class="work-desc">
+            卒業研究で開発した AR アプリケーションと同じシステムの一部で、PLC と MQTT ブローカー間の通信ゲートウェイアプリです。
+            産業機械の制御に広く使われる PLC と MQTT ブローカーをつなぎ、AR アプリからの制御コマンドを PLC に伝える役割とPLCから読み取ったモータのデータを MQTT ブローカーに送信する役割を担います。
+          </p>
+          <div class="work-tech">
+            <span class="tech-badge">.NET</span>
+            <span class="tech-badge">C#</span>
+            <span class="tech-badge">MQTT</span>
+            <span class="tech-badge">PullSub (自作ライブラリ)</span>
+          </div>
+          <div class="work-links">
+            <a href="https://github.com/toshi0515/PlcGateway_v2" class="work-link" target="_blank">↗ GitHub</a>
+          </div>
+        </div>
+      </div>      
+
+      <!-- Work 3: Unity/.NET ライブラリ -->
+      <div class="work-item">
+        <div>
+          <p class="work-meta">Open Source Library · 2025</p>
+          <!-- ライブラリ名を変更してください -->
+          <h3>PullSub</h3>
+          <p class="work-desc">
+            Unity / .NET 向けライブラリ。
+            MQTT 通信を型安全で扱いやすくすることを目指し、個人の学習目的で開発しました。
+            NuGet および GitHub で公開・オープンソース提供中です。
+          </p>
+          <div class="work-tech">
+            <span class="tech-badge">C# / .NET</span>
+            <span class="tech-badge">Unity</span>
+            <span class="tech-badge">NuGet</span>
+            <span class="tech-badge">GitHub Actions</span>
+          </div>
+          <div class="work-links">
+            <a href="https://github.com/toshi0515/PullSub" class="work-link" target="_blank">↗ GitHub</a>
+            <a href="https://www.nuget.org/packages/PullSub.Core" class="work-link" target="_blank">↗ NuGet</a>
+            <a href="https://zenn.dev/toshi0515/articles/1907cb391c90cc" class="work-link" target="_blank">↗ Zenn 記事</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Work 4: 共同研究 AR アプリ -->
+      <div class="work-item">
+        <div class="work-media work-media--video">
+          <iframe
+            src="https://drive.google.com/file/d/19bXIZ_ke8NVA6k2QosVGRhA_iK9wuBos/preview"
+            allow="autoplay"
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div>
+          <p class="work-meta">
+            Joint Research · 2025
+          </p>
+          <h3>AR アプリケーション（共同研究）</h3>
+          <p class="work-desc">
+            共同研究として開発した AR ロボットアーム可視化・制御アプリケーションです。
+            ソースコードの公開はできませんが、動画で概要を示します。こちらもMQTTで通信します。
+          </p>
+          <div class="work-tech">
+            <span class="tech-badge">Unity</span>
+            <span class="tech-badge">C#</span>
+            <span class="tech-badge">Meta XR SDK</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ── Skills ── -->
+  <section id="skills">
+    <p class="section-label">02 — Skills</p>
+    <h2>技術スタック</h2>
+
+    <table class="skills-table">
+      <tr>
+        <td>XR / 3D</td>
+        <td>Unity · Meta XR SDK</td>
+      </tr>
+      <tr>
+        <td>Language</td>
+        <td>C# · Python</td>
+      </tr>
+      <tr>
+        <td>IoT</td>
+        <td>MQTT</td>
+      </tr>
+      <tr>
+        <td>Tools</td>
+        <td>Git · GitHub · GitHub Actions</td>
+      </tr>
+    </table>
+  </section>
+
+  <hr />
+
+  <!-- ── About ── -->
+  <section id="about">
+    <p class="section-label">03 — About</p>
+    <h2>自己紹介</h2>
+
+    <div class="about-text">
+      <p>
+        情報系大学院に在籍しています。
+        XR・IoT・デジタルツインを研究の軸に、実機と連携するアプリケーション開発に取り組んでいます。
+        Unityは大学2年生頃から友達にゲーム開発やってみないかと誘われて触り始めました。
+        プロトタイプのようなゲームはいくつか作りましたが公開できるレベルではないので、学生のうちにゲームを一つ完成させ公開するのが目標の一つです。
+      </p>
+      <p>
+        学部卒業研究では Meta Quest 3 を用いた産業機械の AR 可視化・制御システムを構築しました。
+        自分用にMQTT 通信ライブラリを開発し NuGet / GitHub で公開するなどして独学しています。
+        就活を機にポートフォリオサイトを作成しました。
+      </p>
+    </div>
+
+    <table class="about-table">
+      <tr>
+      </tr>
+      <tr>
+        <td>研究テーマ</td>
+        <td>XR × 産業機械の可視化・制御システム</td>
+      </tr>
+      <tr>
+        <td>主要技術</td>
+        <td>Unity · C#</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <span class="footer-left">Daichi Toshino</span>
+    <div class="footer-links">
+      <a href="https://github.com/toshi0515" target="_blank">GitHub</a>
+      <a href="https://zenn.dev/toshi0515" target="_blank">Zenn</a>
+      <a href="https://www.nuget.org/profiles/toshi0515" target="_blank">NuGet</a>
+    </div>
+  </footer>
+
+</body>
+</html>
